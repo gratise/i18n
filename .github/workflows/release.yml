@@ -41,6 +41,7 @@ jobs:
         shell: bash
         env:
           HUSKY: 0
+          NPM_CONFIG_PROVENANCE: true
         run: |
           pnpm changeset version
           git config user.name "github-actions[bot]"
@@ -49,5 +50,3 @@ jobs:
           git commit -m "chore: release packages"
           git push
           pnpm changeset publish
-        env:
-          NPM_CONFIG_PROVENANCE: true
