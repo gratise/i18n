@@ -32,7 +32,7 @@
     }
   },
   "bin": {
-    "gratise-i18n": "./dist/bin.cjs"
+    "gratise-i18n": "dist/bin.cjs"
   },
   "files": [
     "dist",
