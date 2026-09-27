@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.turbo/
+.rspack-cache/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+apps/docs/doc_build/

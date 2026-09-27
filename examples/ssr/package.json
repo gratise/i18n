@@ -1,0 +1,13 @@
+{
+  "name": "@gratise/example-ssr",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "example": "node server.mjs"
+  },
+  "dependencies": {
+    "@gratise/i18n": "workspace:*",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}
