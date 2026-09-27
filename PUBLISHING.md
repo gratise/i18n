@@ -1,9 +1,7 @@
-# One-time publishing setup
+# Publishing
 
-The workflows and package metadata are configured in this repository. The following account settings need an owner or npm organization administrator:
+The public package [`@gratise/i18n`](https://www.npmjs.com/package/@gratise/i18n) is published on npm. The npm Trusted Publisher is configured for GitHub Actions in `gratise/i18n`, workflow `release.yml`, with direct `npm publish` permission. Releases use OIDC provenance and do not need a long-lived npm token.
 
-1. Publish the first version of `@gratise/i18n` from `packages/i18n` after reviewing `pnpm --filter @gratise/i18n pack --dry-run`: `npm publish --access public --provenance=false`. npm may require the account owner's one-time password for this initial publish.
-2. After the first release creates the package, open its settings on npmjs.com and add a GitHub Actions trusted publisher with organization `gratise`, repository `i18n`, workflow filename `release.yml`, and direct `npm publish` permission enabled. The release workflow uses OIDC and does not need a long-lived npm token.
-3. In GitHub repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. This repository is already configured to deploy `apps/docs` on documentation or library source changes on `main`.
+To prepare a release, add a Changesets entry with `pnpm changeset` and merge it to `main`. The release workflow runs the quality checks, applies package versions and changelogs, commits the version update, and publishes the package. Changesets prerelease mode is also available.
 
-Changesets entries merged to `main` are versioned and published by the release workflow. npm trusted publishing needs npm CLI 11.5.1 or newer and Node 22.14 or newer; the workflow uses Node 26. See [npm's trusted publishing guide](https://docs.npmjs.com/trusted-publishers/) for the current account UI and requirements.
+GitHub Pages uses **GitHub Actions** as its source and deploys the docs app from `apps/docs`.
