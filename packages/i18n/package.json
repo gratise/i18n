@@ -1,6 +1,6 @@
 {
   "name": "@gratise/i18n",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React internationalization with SSR, ICU messages, and translation tooling",
   "homepage": "https://gratise.github.io/i18n/",
   "repository": {
