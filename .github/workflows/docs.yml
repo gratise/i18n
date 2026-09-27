@@ -2,7 +2,7 @@ name: Documentation
 on:
   push:
     branches: [main]
-    paths: ['apps/docs/**', 'src/**', 'pnpm-lock.yaml']
+    paths: ['apps/docs/**', 'packages/i18n/src/**', 'pnpm-lock.yaml']
   workflow_dispatch:
 permissions:
   contents: read

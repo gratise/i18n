@@ -1,46 +1,9 @@
 {
-  "name": "@gratise/i18n",
-  "version": "0.1.0",
-  "description": "React internationalization with SSR, ICU messages, and translation tooling",
-  "homepage": "https://gratise.github.io/i18n/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gratise/i18n.git"
-  },
-  "license": "MIT",
-  "type": "module",
-  "sideEffects": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./cli": {
-      "types": "./dist/cli.d.ts",
-      "import": "./dist/cli.js",
-      "require": "./dist/cli.cjs"
-    },
-    "./providers": {
-      "types": "./dist/providers.d.ts",
-      "import": "./dist/providers.js",
-      "require": "./dist/providers.cjs"
-    }
-  },
-  "bin": {
-    "gratise-i18n": "./dist/bin.cjs"
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
+  "name": "i18n-workspace",
+  "private": true,
   "scripts": {
-    "build": "node scripts/clean.mjs && rspack build -c rspack.config.mjs && tsc -p tsconfig.build.json && node scripts/finalize-build.mjs",
-    "dev": "rspack build -c rspack.config.mjs --watch",
+    "build": "pnpm --filter @gratise/i18n build",
+    "dev": "pnpm --filter @gratise/i18n dev",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
@@ -48,21 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
-    "release": "changeset publish"
-  },
-  "engines": {
-    "node": ">=24",
-    "pnpm": ">=10"
-  },
-  "peerDependencies": {
-    "react": ">=19",
-    "react-dom": ">=19"
-  },
-  "dependencies": {
-    "@babel/parser": "^7.29.9",
-    "chokidar": "^4.0.3",
-    "fast-glob": "^3.3.3",
-    "intl-messageformat": "^10.7.18"
+    "release": "pnpm --filter @gratise/i18n release"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
@@ -87,9 +36,5 @@
     "typescript-eslint": "^8.48.1",
     "vitest": "^4.0.15"
   },
-  "packageManager": "pnpm@10.28.0",
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  }
+  "packageManager": "pnpm@10.28.0"
 }
